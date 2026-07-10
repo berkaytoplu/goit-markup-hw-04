@@ -21,6 +21,7 @@ body {
 }
 
 .order-button {
+  border: none;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -29,6 +30,7 @@ body {
   cursor: pointer;
   justify-content: center;
   padding: 16px 32px;
+  border-radius: 4px;
 }
 
 .order-button:hover {
@@ -67,6 +69,18 @@ body {
 
 .nav-link {
   color: #2e2f42;
+  position: relative;
+}
+
+.nav-link.current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 42px;
+  width: 48px;
+  height: 4px;
+  background-color: #4d5ae5;
+  border-radius: 2px;
 }
 
 .nav-link:hover {
@@ -132,6 +146,9 @@ h3 {
 
 .hero {
   background-color: #2e2f42;
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+  url(../images/people-office\ 1.jpg);
+  background-size: cover;
 }
 
 .footer-style {
@@ -141,7 +158,9 @@ h3 {
 
 .footer-style .container {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 120px;
 }
 
 .footer-text {
@@ -164,6 +183,14 @@ h3 {
   display: flex;
   gap: 24px;
   justify-content: center;
+}
+
+.team-group li {
+  border-radius: 0 0 4px 4px;
+  box-shadow:
+    0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .team-headings {
@@ -223,4 +250,80 @@ img {
 
 .portfolio-card-texts {
   border: 1px solid #e7e9fc;
+}
+
+.team-group-contacts {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding-bottom: 32px;
+}
+
+.team-group-contacts svg:hover {
+  --color1: #404BBF;
+}
+
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-icons {
+   display: flex;
+   gap: 16px;
+}
+
+.footer-icons svg:hover {
+  --color1: #31D0AA;
+}
+
+.footer-contacts-text {
+  color: #f4f4fd;
+  font-weight: 500;
+}
+
+.icon-box {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background-color: #F4F4FD;
+ border: 1px solid #8E8F99;
+ border-radius: 4px;
+ padding: 40px;
+ margin-bottom: 8px;
+ height: 112px;
+ width: 264px;
+}
+
+.portfolio-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 32px 42px;
+  background-color: #4D5AE5;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #F4F4FD;
+}
+
+.portfolio-group li:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-group li {
+  transition: box-shadow 0.3s ease;
+}
+
+.portfolio-group li:hover {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
